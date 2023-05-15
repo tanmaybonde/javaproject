@@ -34,7 +34,7 @@ public class operationwindow extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        txtname = new javax.swing.JTextField();
+        txtfname = new javax.swing.JTextField();
         txtage = new javax.swing.JTextField();
         btnsearch = new javax.swing.JButton();
         btnupdate = new javax.swing.JButton();
@@ -42,7 +42,7 @@ public class operationwindow extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         txtcity = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        txtname1 = new javax.swing.JTextField();
+        txtlname = new javax.swing.JTextField();
         btninsert = new javax.swing.JButton();
         lblclose = new javax.swing.JLabel();
 
@@ -61,6 +61,13 @@ public class operationwindow extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(255, 204, 204));
 
         txtid.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        txtid.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtid.setToolTipText("Enter only integer value");
+        txtid.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtidKeyTyped(evt);
+            }
+        });
 
         jLabel2.setBackground(new java.awt.Color(255, 153, 153));
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -70,6 +77,7 @@ public class operationwindow extends javax.swing.JFrame {
 
         jLabel3.setBackground(new java.awt.Color(255, 153, 153));
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("First Name");
         jLabel3.setOpaque(true);
 
@@ -79,10 +87,23 @@ public class operationwindow extends javax.swing.JFrame {
         jLabel4.setText("Age");
         jLabel4.setOpaque(true);
 
-        txtname.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        txtfname.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        txtfname.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtfname.setToolTipText("this field contain alphabets");
+        txtfname.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtfnameKeyTyped(evt);
+            }
+        });
 
         txtage.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         txtage.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtage.setToolTipText("this field contain integer value");
+        txtage.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtageKeyTyped(evt);
+            }
+        });
 
         btnsearch.setBackground(new java.awt.Color(255, 153, 153));
         btnsearch.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -108,6 +129,11 @@ public class operationwindow extends javax.swing.JFrame {
         btndelete.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btndelete.setText("Delete");
         btndelete.setBorder(null);
+        btndelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btndeleteActionPerformed(evt);
+            }
+        });
 
         jLabel5.setBackground(new java.awt.Color(255, 153, 153));
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -117,13 +143,42 @@ public class operationwindow extends javax.swing.JFrame {
 
         txtcity.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         txtcity.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtcity.setToolTipText("this field contain alphabets");
+        txtcity.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtcityActionPerformed(evt);
+            }
+        });
+        txtcity.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtcityKeyTyped(evt);
+            }
+        });
 
         jLabel6.setBackground(new java.awt.Color(255, 153, 153));
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel6.setText("First Name");
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("Last Name:");
         jLabel6.setOpaque(true);
 
-        txtname1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        txtlname.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        txtlname.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtlname.setToolTipText("this field contain alphabets");
+        txtlname.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtlnameKeyTyped(evt);
+            }
+        });
+
+        btninsert.setBackground(new java.awt.Color(255, 153, 153));
+        btninsert.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btninsert.setText("Insert");
+        btninsert.setBorder(null);
+        btninsert.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btninsertActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -134,6 +189,8 @@ public class operationwindow extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(btnsearch, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(42, 42, 42)
+                        .addComponent(btninsert, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnupdate, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(51, 51, 51)
@@ -147,37 +204,34 @@ public class operationwindow extends javax.swing.JFrame {
                             .addComponent(txtcity, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(182, 182, 182)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(txtid, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(21, 21, 21)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtage, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtid, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(46, 46, 46)
+                        .addGap(40, 40, 40)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(48, 48, 48)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(21, 21, 21)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(txtage, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE)
-                            .addComponent(txtname))
-                        .addGap(42, 42, 42)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE)
-                            .addComponent(txtname1))
-                        .addGap(68, 68, 68))))
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
+                    .addComponent(txtfname))
+                .addGap(42, 42, 42)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
+                    .addComponent(txtlname))
+                .addGap(84, 84, 84))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(58, 58, 58)
+                .addGap(35, 35, 35)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -186,12 +240,12 @@ public class operationwindow extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtid, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtname, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txtfname, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(txtname1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtlname, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(29, 29, 29)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -201,23 +255,14 @@ public class operationwindow extends javax.swing.JFrame {
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(txtage, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btndelete, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnsearch, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnupdate, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnupdate, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btninsert, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(10, 10, 10))
         );
-
-        btninsert.setBackground(new java.awt.Color(255, 153, 153));
-        btninsert.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btninsert.setText("Insert");
-        btninsert.setBorder(null);
-        btninsert.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btninsertActionPerformed(evt);
-            }
-        });
 
         lblclose.setText("jLabel5");
         lblclose.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -231,20 +276,16 @@ public class operationwindow extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(198, 198, 198)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 139, Short.MAX_VALUE)
-                .addComponent(lblclose, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(185, 185, 185)
-                .addComponent(btninsert, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(42, 42, 42)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGap(42, 42, 42)))
+                .addGap(51, 51, 51)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(16, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(122, 122, 122)
+                        .addComponent(lblclose, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -256,14 +297,9 @@ public class operationwindow extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(lblclose, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 314, Short.MAX_VALUE)
-                .addComponent(btninsert, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(58, 58, 58))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(48, 48, 48)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGap(48, 48, 48)))
+                .addGap(18, 18, 18)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(56, 56, 56))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -274,7 +310,7 @@ public class operationwindow extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -283,6 +319,12 @@ public class operationwindow extends javax.swing.JFrame {
     private void btnsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsearchActionPerformed
         // TODO add your handling code here:
         //String studid=txtid.getText();
+        if(txtid.getText().equals("")==true)
+        {
+            JOptionPane.showMessageDialog(this, "Please give id for search");
+            txtid.requestFocus();
+        }
+        else{
         try
         {
             Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/student", "root", "sa1234");
@@ -292,67 +334,193 @@ public class operationwindow extends javax.swing.JFrame {
             rs=st.executeQuery(query);
             if(rs.next()==true)
             {
-                txtname.setText(rs.getString("studusername"));
+                txtfname.setText(rs.getString("fname"));
+                txtlname.setText(rs.getString("lname"));
+                txtcity.setText(rs.getString("city"));
                 txtage.setText(rs.getString("studage"));
             }
             else
             {
                 JOptionPane.showMessageDialog(this, "No record Found");
+                  txtfname.setText("");
+                   txtlname.setText("");
+                   txtage.setText("");
+                   txtcity.setText("");
+                   txtid.setText("");
             }
+          
         }
         catch(Exception e)
         {
             System.out.println("Exception"+e);
+        }
         }
 
     }//GEN-LAST:event_btnsearchActionPerformed
 
     private void btninsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninsertActionPerformed
         // TODO add your handling code here:
-        String name=txtname.getText();
+        if(txtfname.getText().equals("")==true  || txtlname.getText().equals("")==true || txtcity.getText().equals("")==true || txtage.getText().equals("")==true)
+        {
+            JOptionPane.showMessageDialog(this, "Some field are empty for insert");
+            
+        }
+        else{
+        String fname=txtfname.getText();
         String age=txtage.getText();
+        String city=txtcity.getText();
+        String lname=txtlname.getText();
         String stdid=txtid.getText();
          try
         {
             Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/student", "root", "sa1234");
             Statement st=con.createStatement();
-            String query="INSERT INTO stud (studusername,studage) VALUES ('"+txtname.getText()+"','"+txtage.getText()+"')" ;
+            //String query="INSERT INTO stud (studusername,studage) VALUES ('"+txtfname.getText()+"','"+txtage.getText()+"')" ;
+            String query="INSERT INTO stud (`studid`,`fname`, `lname`, `city`, `studage`) VALUES ('"+stdid+"','"+fname+"', '"+lname+"', '"+city+"','"+age+"')";
             st.executeUpdate(query);
             JOptionPane.showMessageDialog(this,"Insert Sucessful");
             txtage.setText("");
-            txtname.setText("");
+            txtfname.setText("");
             txtid.setText("");
+            txtcity.setText("");
+            txtlname.setText("");
         }
         catch(Exception e)
         {
             System.out.println("Exception"+e);
         }
-
+        }
         
     }//GEN-LAST:event_btninsertActionPerformed
 
     private void lblcloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblcloseMouseClicked
         // TODO add your handling code here:
-        this.dispose();
+        int res;
+        res=JOptionPane.showConfirmDialog(this, "Do you really want to close","Closw window",JOptionPane.YES_NO_OPTION);
+        if(res==JOptionPane.YES_OPTION)
+        {
+            this.dispose();
+        }
+        
     }//GEN-LAST:event_lblcloseMouseClicked
 
     private void btnupdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnupdateActionPerformed
         // TODO add your handling code here:
-         try
+         if(txtfname.getText().equals("")==true  || txtlname.getText().equals("")==true || txtcity.getText().equals("")==true || txtage.getText().equals("")==true)
         {
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/student", "root", "sa1234");
-            Statement st=con.createStatement();
-            String query="UPDATE stud SET `studusername` = '"+txtname.getText()+"', `studage` = '"+txtage.getText()+"' WHERE (`studid` = '"+txtid.getText()+"')" ;
-            st.executeUpdate(query);
-            JOptionPane.showMessageDialog(this,"Updated Sucessful");
+            JOptionPane.showMessageDialog(this, "Some field are empty for update");
             
         }
-        catch(Exception e)
-        {
-            System.out.println("Exception"+e);
-        }
+         else
+         {
+                try
+               {
+                   Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/student", "root", "sa1234");
+                   Statement st=con.createStatement();
+                   String query="UPDATE stud SET fname='"+txtfname.getText()+"',lname='"+txtlname.getText()+"',city='"+txtcity.getText()+"',`studage` = '"+txtage.getText()+"' WHERE (`studid` = '"+txtid.getText()+"')" ;
+                   st.executeUpdate(query);
+                   JOptionPane.showMessageDialog(this,"Updated Sucessful");
+                   txtfname.setText("");
+                   txtlname.setText("");
+                   txtage.setText("");
+                   txtcity.setText("");
+                   txtid.setText("");
+                           
 
+               }
+               catch(Exception e)
+               {
+                   System.out.println("Exception"+e);
+               }
+         }
     }//GEN-LAST:event_btnupdateActionPerformed
+
+    private void txtfnameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtfnameKeyTyped
+        // TODO add your handling code here:
+        char ch;
+        ch=evt.getKeyChar();
+        if(Character.isAlphabetic(ch)==false)
+        {
+            evt.consume();
+        }
+        
+    }//GEN-LAST:event_txtfnameKeyTyped
+
+    private void txtlnameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtlnameKeyTyped
+        // TODO add your handling code here:
+         char ch;
+        ch=evt.getKeyChar();
+        if(Character.isAlphabetic(ch)==false)
+        {
+            evt.consume();
+        }
+        
+    }//GEN-LAST:event_txtlnameKeyTyped
+
+    private void txtcityKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtcityKeyTyped
+        // TODO add your handling code here:
+         char ch;
+        ch=evt.getKeyChar();
+        if(Character.isAlphabetic(ch)==false)
+        {
+            evt.consume();
+        }
+        
+    }//GEN-LAST:event_txtcityKeyTyped
+
+    private void txtageKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtageKeyTyped
+        // TODO add your handling code here:
+         char ch;
+        ch=evt.getKeyChar();
+        if(Character.isDigit(ch)==false)
+        {
+            evt.consume();
+        }
+        
+    }//GEN-LAST:event_txtageKeyTyped
+
+    private void btndeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndeleteActionPerformed
+        // TODO add your handling code here:
+        if(txtid.getText().equals("")==true)
+        {
+            JOptionPane.showMessageDialog(this, "Please give id for delete");
+            txtid.requestFocus();
+        }
+        else{
+                try
+               {
+                   Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/student", "root", "sa1234");
+                   Statement st=con.createStatement();
+                   String query="DELETE FROM `student`.`stud` WHERE (`studid` = '"+txtid.getText()+"');" ;
+                   st.executeUpdate(query);
+                   JOptionPane.showMessageDialog(this,"Deleted Sucessful");
+                     txtfname.setText("");
+                   txtlname.setText("");
+                   txtage.setText("");
+                   txtcity.setText("");
+                   txtid.setText("");
+
+               }
+               catch(Exception e)
+               {
+                   System.out.println("Exception"+e);
+               }
+        }
+    }//GEN-LAST:event_btndeleteActionPerformed
+
+    private void txtidKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtidKeyTyped
+        // TODO add your handling code here:
+        char ch;
+        ch=evt.getKeyChar();
+        if(Character.isDigit(ch)==false)
+        {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtidKeyTyped
+
+    private void txtcityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcityActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtcityActionPerformed
 
     /**
      * @param args the command line arguments
@@ -405,8 +573,8 @@ public class operationwindow extends javax.swing.JFrame {
     private javax.swing.JLabel lblclose;
     private javax.swing.JTextField txtage;
     private javax.swing.JTextField txtcity;
+    private javax.swing.JTextField txtfname;
     private javax.swing.JTextField txtid;
-    private javax.swing.JTextField txtname;
-    private javax.swing.JTextField txtname1;
+    private javax.swing.JTextField txtlname;
     // End of variables declaration//GEN-END:variables
 }
